@@ -9,8 +9,6 @@
 
 	initializeStores();
 	
-	let currentId = 0;
-
 	const modalStore: ModalStore = getModalStore();
 
 	function askPrompt() {
@@ -26,17 +24,11 @@
 	}
 
 	function addNote(inputText: string): void {
-		let note = {
-			id: currentId,
-			text: inputText,
-		}
-
 		modalStore.close();
-		currentId++;
 
 		notes.update((notes) => {
 			return [...notes, {
-				id: currentId,
+				id: crypto.randomUUID(),
 				text: inputText,
 			}]
 		})
@@ -45,7 +37,7 @@
 
 <Modal />
 
-<AppShell slotPageHeader="h-20" slotSidebarLeft="bg-surface-500/50 w-52 p-5" slotSidebarRight="w-30 p-5 bg-surface-700">
+<AppShell slotPageHeader="h-20" slotSidebarLeft="bg-surface-500/20 w-52 p-3" slotSidebarRight="w-30 p-5 bg-surface-700">
 	<svelte:fragment slot="header">
 
 		<AppBar>

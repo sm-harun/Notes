@@ -2,7 +2,7 @@ import { localStorageStore } from "@skeletonlabs/skeleton";
 import type { Writable } from "svelte/store";
 
 type Note = {
-    id: number,
+    id: string,
     text: string,
 }
 
