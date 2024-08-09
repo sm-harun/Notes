@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AppShell, AppBar, Modal, initializeStores, getModalStore } from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar, Modal, initializeStores, getModalStore, LightSwitch } from '@skeletonlabs/skeleton';
 	import type { ModalStore, ModalSettings } from '@skeletonlabs/skeleton';
 	import '../app.postcss';
 
@@ -37,11 +37,17 @@
 
 <Modal />
 
-<AppShell slotPageHeader="h-20" slotSidebarLeft="bg-surface-500/20 w-52 p-3" slotSidebarRight="w-30 p-5 bg-surface-700">
+<AppShell slotHeader="h-50" slotSidebarLeft="bg-surface-500/20 w-52 p-1" slotSidebarRight="w-30 p-5 bg-surface-700">
 	<svelte:fragment slot="header">
 
 		<AppBar>
-			<h1 class="text-primary-500">Notes</h1>
+			<svelte:fragment slot="lead">
+				<h1 class="text-primary-500">Notes</h1>
+			</svelte:fragment>
+
+			<svelte:fragment slot="trail">
+				<LightSwitch />
+			</svelte:fragment>
 		</AppBar>
 
 	</svelte:fragment>

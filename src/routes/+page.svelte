@@ -3,6 +3,7 @@
 	import type { ModalComponent, ModalSettings, ModalStore } from "@skeletonlabs/skeleton";
 
 	import { notes } from "$lib/stores";
+  import { fly } from "svelte/transition";
 
 	const modalStore = getModalStore();
 
@@ -25,7 +26,7 @@
 
 <div class="grid grid-cols-2 p-5 gap-4">
 	{#each $notes as note}
-		<div class="card w-full h-20 p-4 flex justify-between">
+		<div class="card w-full h-20 p-4 flex justify-between hover:-translate-y-1 transition" in:fly|local={{ y: 30, duration: 500 }}>
 			<div>{note.text}</div>
 			<button class="btn bg-secondary-500" on:click={() => confirmDeletion(note.id)}>Delete</button>
 		</div>
