@@ -57,7 +57,7 @@
 	</div>
 </Drawer>
 
-<AppShell slotHeader="h-50" slotSidebarLeft="bg-surface-500/20 w-0 md:w-52 md:p-1" slotSidebarRight="bg-surface-700 hidden md:w-30 md:block md:p-5">
+<AppShell slotHeader="h-50" slotSidebarLeft="bg-surface-500/20 w-0 md:w-52 md:p-1" slotSidebarRight="bg-surface-700/40  hidden md:w-30 md:block md:p-5">
 	<svelte:fragment slot="header">
 
 		<AppBar slotLead="md:hidden" slotTrail="ml-auto">
@@ -86,7 +86,11 @@
 
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarRight">
-		<button class="btn bg-primary-500 grid place-items-center p-4" on:click={askPrompt}>+Add</button>
+		<button class="bg-secondary-500 rounded-full p-3" on:click={askPrompt}>
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+			</svg>
+		</button>
 	</svelte:fragment>
 
 	<slot />
